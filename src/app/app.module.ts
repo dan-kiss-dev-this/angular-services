@@ -16,7 +16,6 @@ import { LoggingService } from './logging.service';
 })
 export class AppModule {
   constructor(
-    private accountsService: AccountsService,
-    private loggingService: LoggingService
+    private accountsService: AccountsService // private loggingService: LoggingService
   ) {}
 }

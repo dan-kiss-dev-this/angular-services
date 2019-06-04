@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-// import { LoggingService } from '../logging.service';
+import { LoggingService } from '../logging.service';
 import { AccountsService } from '../accounts.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class AccountComponent {
   // }>();
 
   constructor(
-    // private loggingService: LoggingService,
+    private loggingService: LoggingService,
     private accountsService: AccountsService
   ) {}
 
@@ -25,5 +25,6 @@ export class AccountComponent {
     this.accountsService.updateStatus(this.id, status);
     // console.log('A server status changed, new status: ' + status);
     // this.loggingService.logStatusChange(status);
+    this.accountsService.statusUpdated.emit(status);
   }
 }
